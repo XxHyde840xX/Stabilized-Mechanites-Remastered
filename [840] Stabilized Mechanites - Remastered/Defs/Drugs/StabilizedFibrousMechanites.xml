@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  
+  <ThingDef ParentName="DrugPillBase">
+    <defName>StabilizedFibrousMechanites</defName>
+    <label>stabilized fibrous mechanites</label>
+    <description>Stabilized micro-dose of self-replicating mechanites, giving to the user a safer, but less powerful version of the well known "Fibrous Mechanites" disease. It's specialized as such that the white-blood cells will recognize and accept the mechanites safely, after one dose they will begin to spread and thrive within the host. Originally designed as combat drugs, they quickly became too expensive to manufacture, now only a limited amount remains.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/Stabilized_Fibrous</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>3500</MarketValue>
+      <Mass>0.1</Mass>
+    </statBases>
+    <techLevel>Ultra</techLevel>
+    <minRewardCount>1</minRewardCount>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <baseIngestTicks>80</baseIngestTicks>
+      <ingestSound>Ingest_Inject</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>StabilizedFibrousMechanites</hediffDef>
+          <severity>1</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Luciferium</chemical>
+        <addictiveness>0</addictiveness>
+        <needLevelOffset>0</needLevelOffset>
+      </li>
+    </comps>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <thingSetMakerTags><li>RewardStandardHighFreq</li></thingSetMakerTags>
+    <allowedArchonexusCount>10</allowedArchonexusCount>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>StabilizedFibrousMechanites</defName>
+    <hediffClass>Hediff_High</hediffClass>
+    <label>stabilized fibrous mechanites</label>
+    <description>Placeholder.</description>
+    <defaultLabelColor>(1,1,0.5)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painOffset>0.15</painOffset>
+        <restFallFactorOffset>0.35</restFallFactorOffset>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>0.25</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>
